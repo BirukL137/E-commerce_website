@@ -1,7 +1,8 @@
+# Import necessary modules
 from shop import db
 from datetime import datetime
 
-
+# This is the Addproduct model that represents the user table in the database.
 class Addproduct(db.Model):
     __seachbale__ = ['name','desc']
     id = db.Column(db.Integer, primary_key=True)
@@ -26,7 +27,7 @@ class Addproduct(db.Model):
     def __repr__(self):
         return '<Post %r>' % self.name
 
-
+# This is the Brand model that represents the user table in the database.
 class Brand(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(30), unique=True, nullable=False)
@@ -34,7 +35,7 @@ class Brand(db.Model):
     def __repr__(self):
         return '<Brand %r>' % self.name
     
-
+# This is the Category model that represents the user table in the database.
 class Category(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(30), unique=True, nullable=False)
@@ -42,5 +43,5 @@ class Category(db.Model):
     def __repr__(self):
         return '<Catgory %r>' % self.name
 
-
+# Create the database tables for all defined models.
 db.create_all()
